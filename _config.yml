@@ -106,8 +106,6 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: cactus
-theme_config:
-colorscheme: light
 
 #Social Links
 social_links:
