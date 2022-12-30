@@ -123,7 +123,14 @@ social_links:
 deploy:
   type: git
   repo: https://github.com/kaxem/kaxem.github.io
-  # example, https://github.com/hexojs/hexojs.github.io
-  branch: gh-pages
+  branch: main
+  token: ''
+  message: [message]
+  name: kaxem
+  ##email: [git email]
+  extend_dirs: [extend directory]
+  ignore_hidden: false # default is true
+  ignore_pattern: regexp  # whatever file that matches the regexp will be ignored when deploying
+
 # Links
 ## Name is the name of a Font Awesome icon
