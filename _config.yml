@@ -121,8 +121,9 @@ social_links:
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: 'git'
-  repo: https://github.com/kaxem/hexo
-  branch: main
+  type: git
+  repo: https://github.com/kaxem/kaxem.github.io
+  # example, https://github.com/hexojs/hexojs.github.io
+  branch: gh-pages
 # Links
 ## Name is the name of a Font Awesome icon
