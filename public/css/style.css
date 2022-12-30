@@ -471,15 +471,15 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  border-top: 2px solid #363533;
+  border-top: 2px solid #E2E0DE;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 body {
   margin: 0;
   height: 100%;
-  background-color: #e2e0de;
-  color: #363533;
+  background-color: #222129;
+  color: #E2E0DE;
   font-display: swap;
   font-weight: 400;
   font-size: 14px;
@@ -510,9 +510,9 @@ body {
   -webkit-hyphens: manual;
 }
 .content a {
-  color: #363533;
+  color: #E2E0DE;
   text-decoration: none;
-  background-image: linear-gradient(transparent, transparent 5px, #363533 5px, #363533);
+  background-image: linear-gradient(transparent, transparent 5px, #E2E0DE 5px, #E2E0DE);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -599,7 +599,7 @@ body {
 #header .h1 {
   margin-top: 0;
   margin-bottom: 0;
-  color: #363533;
+  color: #E2E0DE;
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
@@ -841,7 +841,7 @@ body {
   display: none;
 }
 #header-post #toc .toc-level-2 {
-  color: #363533;
+  color: #E2E0DE;
   font-size: 0.8rem;
 }
 #header-post #toc .toc-level-2:before {
@@ -1021,7 +1021,7 @@ body {
   display: none;
 }
 #footer-post #toc-footer .toc-level-2 {
-  color: #363533;
+  color: #E2E0DE;
   font-size: 0.8rem;
 }
 #footer-post #toc-footer .toc-level-2:before {
@@ -1326,14 +1326,14 @@ article .content .caption {
   text-align: center;
 }
 .pagination .page-number {
-  color: #363533;
+  color: #E2E0DE;
   font-size: 0.8rem;
 }
 .pagination a {
   padding: 4px 6px;
   border-radius: 5px;
   background-image: none;
-  color: #363533;
+  color: #E2E0DE;
   text-decoration: none;
 }
 .pagination a:hover {
@@ -1348,8 +1348,8 @@ article .content .caption {
   outline: none;
   border: solid 1px #666;
   border-radius: 5px;
-  background-color: #e2e0de;
-  color: #363533;
+  background-color: #222129;
+  color: #E2E0DE;
   font-size: 1.2rem;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1366,7 +1366,7 @@ article .content .caption {
 }
 #search-result a.search-result-title {
   background-image: none;
-  color: #363533;
+  color: #E2E0DE;
   text-transform: capitalize;
   font-weight: bold;
   line-height: 1.2;
@@ -1386,7 +1386,7 @@ article .content .caption {
 .search-no-result {
   display: none;
   padding-bottom: 0.5em;
-  color: #363533;
+  color: #E2E0DE;
 }
 #tag-cloud .tag-cloud-title {
   color: #666;
@@ -1408,7 +1408,7 @@ article .content .caption {
   display: none;
   padding: 0.2em 0.5em;
   -webkit-font-smoothing: subpixel-antialiased;
-  color: #e2e0de;
+  color: #222129;
   font-display: swap;
   font-weight: 400;
   font-size: 11.200000000000001px;
@@ -1419,7 +1419,7 @@ article .content .caption {
   word-wrap: break-word;
   white-space: pre;
   content: attr(aria-label);
-  background: #363533;
+  background: #E2E0DE;
   border-radius: 3px;
   opacity: 0;
 }
@@ -1429,7 +1429,7 @@ article .content .caption {
   display: none;
   width: 0;
   height: 0;
-  color: #363533;
+  color: #E2E0DE;
   pointer-events: none;
   content: '';
   border: 6px solid transparent;
@@ -1460,7 +1460,7 @@ article .content .caption {
   right: 50%;
   bottom: -7px;
   margin-right: -6px;
-  border-bottom-color: #363533;
+  border-bottom-color: #E2E0DE;
 }
 .tooltipped-sw::after {
   margin-right: -16px;
