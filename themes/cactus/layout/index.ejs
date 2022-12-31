@@ -58,14 +58,40 @@
     <%- partial('_partial/pagination') %>
   <% } %>
 </section>
+</section>
 
-<% if (site.data.skills) { %>
 <section id="skills">
-  <span class="h1"><a href="/skills">Skills</a></span>
-  <ul class="skill-list">
-    <% for(var obj in site.data.skills){ %>
-      <li class="skill-item">
-        <p><%- site.data.skills[obj].name %></p>: <%- markdown(site.data.skills[obj].desc) %>
+  <h1 id="Skills"><a href="/skills" class="headerlink" title="Skills:"></a>Skills:</h1>
+  <ul>
+    <li>Linux</li>
+    <li>C</li>
+    <li>Python</li>
+    <li>Bash script</li>
+    <li>Docker</li>
+    <li>Understanding of cybersecurity</li>
+    <li>Cloud engineering<ul>
+    <li>Azure</li>
+    </ul>
+    </li>
+    <li>Database<ul>
+    <li>MYSQL</li>
+    </ul>
+    </li>
+    <li>Front-end<ul>
+    <li>HTML &amp; CSS</li>
+    <li>Javascript</li>
+    </ul>
+    </li>
+    </ul>
+</section>
+
+<% if (site.data.projects) { %>
+<section id="projects">
+  <span class="h1"><a href="<%- url_for(theme.projects_url) %>"><%= __('index.projects') %></a></span>
+  <ul class="project-list">
+    <% for(var obj in site.data.projects){ %>
+      <li class="project-item">
+        <a href="<%= site.data.projects[obj].url %>"><%= site.data.projects[obj].name %></a>: <%- markdown(site.data.projects[obj].desc) %>
       </li>
     <% } %>
   </ul>
