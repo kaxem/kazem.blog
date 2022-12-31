@@ -2,16 +2,12 @@
 title: about
 ---
 ![Xai](/images/Xai.jpeg)
-Everything started with a pornographic website. i was 21 years old and somehow
-i had this idea about, how can i access to all of website's videos. so i started to learn
-hack methodes=)). in the half way i learned about xss and find a vulnerablity in a site and
-reported it. they payed me a bug bounty$_$. imidiately i bought premium account for that porn site.
-after all I'm a jounior DevOps Engineer who's intrested in finding humanity bugs and debug them.
+Everything started with a pornographic website. I was 21 years old and somehow I had this idea about, how can I access to all of the website's videos. so I started to learn hack methods =)). in the half way, I learned about XSS and find a vulnerability in a site and reported it. they paid me a bug bounty$_$. Immediately I Purchased a premium account on that porn site. after all, I'm a junior DevOps Engineer who's interested in finding humanity bugs and debugging them.
 </br>
 </br>
 
 
-#My hard kills:
+# My hard kills:
 * Linux
 * C
 * Python
@@ -20,7 +16,7 @@ after all I'm a jounior DevOps Engineer who's intrested in finding humanity bugs
 * Understanding of cybersecurity
 </br>
 
-#Soft skills:
+# Soft skills:
 * Cloud engineering
    * Azure
 * Database
