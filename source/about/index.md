@@ -7,22 +7,5 @@ Everything started with a pornographic website. I was 22 years old and somehow I
 </br>
 
 
-# Hard skills:
-* Linux
-* C
-* Python
-* Shell script
-* Docker
-* Understanding of cybersecurity
-</br>
-
-# Soft skills:
-* Cloud engineering
-   * Azure
-* Database
-   * MYSQL
-* Front-end
-   * HTML & CSS
-   * Javascript
 
 
