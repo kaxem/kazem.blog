@@ -71,3 +71,20 @@
   </ul>
 </section>
 <% } %>
+<% if (site.data.skills) { %>
+  <section id="skills">
+    <span class="h1"><a href="<%- url_for(theme.skills_url) %>"><%= __('index.projects') %></a></span>
+    <ul class="skill-list">
+      <% for(var obj in site.data.skills){ %>
+        <li class="skill-item">
+          <p><%= site.data.skills[obj].name %></p>: <%- markdown(site.data.skills[obj].desc) %>
+          <% if (site.data.skills[obj].sub)  %>
+            <li class="skill-item">
+              <p><%= site.data.skills[obj].sub %></p>: <%- markdown(site.data.skills[obj].desc) %>
+            </li>
+        </li>
+      <% } %>
+    </ul>
+  </section>
+  <% } %>
+  

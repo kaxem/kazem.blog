@@ -1,0 +1,61 @@
+[
+
+    {
+       "name":"Linux",
+       "url":"",
+       "desc":""
+    },
+    {
+        "name":"C",
+        "url":""
+        ,"desc":""
+    },
+    {
+        "name":"Python",
+        "url":""
+        ,"desc":""
+    },
+    {
+        "name":"Shell script",
+        "url":""
+        ,"desc":""
+    },
+    {
+        "name":"Docker",
+        "url":""
+        ,"desc":""
+    },
+    {
+        "name":"Understanding of cybersecurity",
+        "url":""
+        ,"desc":""
+    },
+    {
+        "name":"Cloud engineering",
+        "url":"",
+        "desc":"",
+        "sub":{
+            "name":"Azure"
+        }
+        
+    },
+    {
+        "name":"Database",
+        "url":""
+        ,"desc":"",
+        "sub":{
+            "name":"MYSQL"
+        }
+    },
+    {
+        "name":"Front-end",
+        "url":""
+        ,"desc":"",
+        "sub":{
+            "name":"HTML & CSS"
+        }
+    }
+    
+
+    
+]
