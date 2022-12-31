@@ -72,4 +72,15 @@
 </section>
 <% } %>
 
+<section id="skills">
+  <span class="h1"><a href="/skills">Skills</a></span>
+  <ul class="skill-list">
+    <% for(var obj in site.data.skills){ %>
+      <li class="skill-item">
+        <a href="<%= site.data.projects[obj].url %>"><%= site.data.skills[obj].name %></a>: <%- markdown(site.data.skills[obj].desc) %>
+      </li>
+     } %>
+  </ul>
+</section>
+
   
