@@ -60,31 +60,16 @@
 </section>
 
 <% if (site.data.projects) { %>
-<section id="projects">
+<section id="skills">
   <span class="h1"><a href="<%- url_for(theme.projects_url) %>"><%= __('index.projects') %></a></span>
-  <ul class="project-list">
+  <ul class="skills-list">
     <% for(var obj in site.data.projects){ %>
-      <li class="project-item">
+      <li class="skill-item">
         <a href="<%= site.data.projects[obj].url %>"><%= site.data.projects[obj].name %></a>: <%- markdown(site.data.projects[obj].desc) %>
       </li>
     <% } %>
   </ul>
 </section>
 <% } %>
-<% if (site.data.skills) { %>
-  <section id="skills">
-    <span class="h1"><a href="<%- url_for(theme.skills_url) %>"><%= __('index.projects') %></a></span>
-    <ul class="skill-list">
-      <% for(var obj in site.data.skills){ %>
-        <li class="skill-item">
-          <p><%= site.data.skills[obj].name %></p>: <%- markdown(site.data.skills[obj].desc) %>
-          <% if (site.data.skills[obj].sub)  %>
-            <li class="skill-item">
-              <p><%= site.data.skills[obj].sub %></p>: <%- markdown(site.data.skills[obj].desc) %>
-            </li>
-        </li>
-      <% } %>
-    </ul>
-  </section>
-  <% } %>
+
   
