@@ -7,7 +7,7 @@ Everything started with a pornographic website. I was 22 years old and somehow I
 </br>
 
 
-# My hard kills:
+# Hard skills:
 * Linux
 * C
 * Python
