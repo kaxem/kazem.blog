@@ -106,13 +106,13 @@ logo:
 #   - gravatar: whether to create a favicon from your Gravatar
 favicon:
   desktop:
-    url: kaxem/kaxem.github.io/public/images/favicon.ico
+    url: kaxem.github.io/public/images/favicon.ico
     gravatar: false
   android:
-    url: kaxem/kaxem.github.io/public/images/favicon-192x192.png
+    url: kaxem.github.io/public/images/favicon-192x192.png
     gravatar: false
   apple:
-    url: kaxem/kaxem.github.io/public/images/apple-touch-icon.png
+    url: kaxem.github.io/public/images/apple-touch-icon.png
     gravatar: false
 
 # The color scheme that should be used to highlight codeblocks.
