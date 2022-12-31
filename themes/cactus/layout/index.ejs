@@ -59,13 +59,13 @@
   <% } %>
 </section>
 
-<% if (site.data.projects) { %>
+<% if (site.data.skills) { %>
 <section id="projects">
-  <span class="h1"><a href="<%- url_for(theme.projects_url) %>"><%= __('index.projects') %></a></span>
-  <ul class="project-list">
-    <% for(var obj in site.data.projects){ %>
+  <span class="h1"><a href="<%- url_for(theme.projects_url) %>"><%= __('index.skills') %></a></span>
+  <ul class="skill-list">
+    <% for(var obj in site.data.skills){ %>
       <li class="project-item">
-        <a href="<%= site.data.projects[obj].url %>"><%= site.data.projects[obj].name %></a>: <%- markdown(site.data.projects[obj].desc) %>
+        <p><%= site.data.skills[obj].name %></p>: <%- markdown(site.data.skills[obj].desc) %>
       </li>
     <% } %>
   </ul>
