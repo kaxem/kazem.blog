@@ -8,6 +8,21 @@ also a former Dota 2 player(FeelsBadMan).
 </br>
 </br>
 
+# Skills:
+* Linux
+* C
+* Python
+* Shell script
+* Docker
+* Understanding of cybersecurity
+* Cloud engineering
+   * Azure
+* Database
+   * MYSQL
+* Front-end
+   * HTML & CSS
+   * Javascript
+
 
 
 
