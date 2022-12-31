@@ -61,10 +61,10 @@
 
 <% if (site.data.projects) { %>
 <section id="skills">
-  <span class="h1"><a href="<%- url_for(theme.projects_url) %>"><%= __('index.projects') %></a></span>
-  <ul class="skills-list">
+  <span class="h1"><a href="<%- url_for(theme.projects_url) %>"><%= __('index.skills') %></a></span>
+  <ul class="project-list">
     <% for(var obj in site.data.projects){ %>
-      <li class="skill-item">
+      <li class="project-item">
         <a href="<%= site.data.projects[obj].url %>"><%= site.data.projects[obj].name %></a>: <%- markdown(site.data.projects[obj].desc) %>
       </li>
     <% } %>
