@@ -335,14 +335,14 @@ body .h2 {
   display: block;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
-  color: #111;
+  color: #E2E0DE;
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
   font-size: 1rem;
 }
 body h3 {
-  color: #111;
+  color: #E2E0DE;
   text-decoration: underline;
   font-weight: bold;
   font-size: 0.9rem;
@@ -426,7 +426,7 @@ body table {
 body th {
   padding: 8px;
   border-bottom: 1px dashed #666;
-  color: #111;
+  color: #E2E0DE;
   font-weight: bold;
   font-size: 13px;
 }
@@ -1340,7 +1340,7 @@ article .content .caption {
   background-image: none;
 }
 .pagination a:hover:not(.active) {
-  color: #111;
+  color: #E2E0DE;
 }
 .search-input {
   padding: 4px 7px;
