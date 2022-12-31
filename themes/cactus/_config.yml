@@ -106,13 +106,13 @@ logo:
 #   - gravatar: whether to create a favicon from your Gravatar
 favicon:
   desktop:
-    url: theme/cactus/source/images/favicon.ico
+    url: themes/cactus/source/images/favicon.ico
     gravatar: false
   android:
-    url: theme/cactus/source/images/favicon-192x192.png
+    url: themes/cactus/source/images/favicon-192x192.png
     gravatar: false
   apple:
-    url: theme/cactus/source/images/apple-touch-icon.png
+    url: themes/cactus/source/images/apple-touch-icon.png
     gravatar: false
 
 # The color scheme that should be used to highlight codeblocks.
