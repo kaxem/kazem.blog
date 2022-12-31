@@ -1,7 +1,6 @@
 ---
 title: Skills
 ---
-These are my skills in order:
 # Skills:
 * Linux
 * C
