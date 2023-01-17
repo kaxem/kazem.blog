@@ -1143,9 +1143,9 @@ article .content blockquote {
   margin: 1rem 10px;
   padding: 0.5em 10px;
   background: inherit;
-  color: #E2E0DE;
+  color: #276F5A;
   quotes: "\201C" "\201D" "\2018" "\2019";
-  font-weight: 400;
+  font-weight: 450;
 }
 article .content blockquote p {
   margin: 0;
