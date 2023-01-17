@@ -1143,9 +1143,9 @@ article .content blockquote {
   margin: 1rem 10px;
   padding: 0.5em 10px;
   background: inherit;
-  color: #d44375;
+  color: #E2E0DE;
   quotes: "\201C" "\201D" "\2018" "\2019";
-  font-weight: bold;
+  font-weight: 400;
 }
 article .content blockquote p {
   margin: 0;
@@ -1161,7 +1161,7 @@ article .content blockquote:before {
 article .content blockquote footer {
   margin: line-height 0;
   color: #666;
-  font-size: 12px;
+  font-size: 14px;
 }
 article .content blockquote footer a {
   background-image: linear-gradient(transparent, transparent 5px, #666 5px, #666);
