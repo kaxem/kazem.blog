@@ -1,9 +1,8 @@
 ---
-title: Pay your employees properly!
+title: Software Engineers are NOT your slaves!
 ---
-Recentely I started to apply as a DevOps Engineer.
-Every job offer I saw had an endless list of requirement skills. and they offer minimum
-payment, in Iran it is 5,400,000 tomans per mounth, that equals to 135$.
+Recently I started to apply for a DevOps Engineer position.
+Every job offer I saw, had an endless list of requirement skills. and they offer minimum payment, in Iran it is 5,400,000 tomans per mounth, that equals to 135$.
 This issue mostly includes small companies with 10-50 employees.
 Some of these companies can’t even write a short description about what their doing or their goals or etc.
 Let’s review one of job offers I read in jobinja.com:</br>
