@@ -1,3 +1,4 @@
+---
 title: God's bash script to make Iranians
 ---
 this is 1 line script i found in the "Moses: gnu-linux for judaism" book:
