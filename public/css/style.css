@@ -322,7 +322,7 @@ body .h1 {
   margin-top: 3rem;
   margin-bottom: 1rem;
   color: #d44375;
-  letter-spacing: normal;
+  letter-spacing: -0.2rem;
   font-weight: 700;
   font-style: normal;
   font-size: 1.5em;
@@ -337,7 +337,7 @@ body .h2 {
   margin-bottom: 0.5rem;
   color: #E2E0DE;
   text-transform: none;
-  letter-spacing: normal;
+  letter-spacing: -0.2rem;
   font-weight: bold;
   font-size: 1rem;
 }
@@ -600,7 +600,7 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   color: #E2E0DE;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.2rem;
   font-weight: 700;
   font-style: normal;
   font-size: 1.5rem;
@@ -627,7 +627,7 @@ body {
 }
 #header #nav {
   color: #d44375;
-  letter-spacing: normal;
+  letter-spacing: -0.2rem;
   font-weight: 200;
   font-style: normal;
   font-size: 0.8rem;
@@ -772,7 +772,7 @@ body {
 }
 #header-post #nav {
   color: #d44375;
-  letter-spacing: normal;
+  letter-spacing: -0.2rem;
   font-weight: 200;
   font-style: normal;
   font-size: 0.8rem;
@@ -1101,7 +1101,7 @@ article header .meta * {
 }
 article header .author {
   text-transform: uppercase;
-  letter-spacing: normal;
+  letter-spacing: -0.2rem;
   font-weight: 700;
 }
 article header .postdate {
