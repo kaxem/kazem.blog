@@ -89,7 +89,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: 'empty'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -114,7 +114,7 @@ social_links:
   github: https://github.com/kaxem
   reddit: https://www.reddit.com/user/kaaaxem
   stackoverflow: https://stackoverflow.com/users/20900800/xai
-  linkedin: https://www.linkedin.com/in/kazem-bolandnazar-150770255/
+  linkedin: https://www.linkedin.com/in/kazem-bolandnazar/
   email: mailto:kaaxem@yahoo.com
   medium: https://medium.com/@liftyourskinnyfist
   NAME: https://kit.fontawesome.com/a3eff36268.js
