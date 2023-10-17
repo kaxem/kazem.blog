@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Whats GitOps?GitOps principles uses git repositories as single source of truth to deliver infrastructure as code.  What is GitOps workflow?GitOps uses Git as the version control system for infrastruct">
+    <meta name="description" content="Whats GitOps?GitOps principles uses git repositories as single source of truth to deliver infrastructure as code. What is GitOps workflow?GitOps uses Git as the version control system for infrastructu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ArgoCD, why not?">
 <meta property="og:url" content="http://kaxem.github.io/2023/10/17/ArgoCD/index.html">
 <meta property="og:site_name" content="Lift Your Skinny Fist">
-<meta property="og:description" content="Whats GitOps?GitOps principles uses git repositories as single source of truth to deliver infrastructure as code.  What is GitOps workflow?GitOps uses Git as the version control system for infrastruct">
+<meta property="og:description" content="Whats GitOps?GitOps principles uses git repositories as single source of truth to deliver infrastructure as code. What is GitOps workflow?GitOps uses Git as the version control system for infrastructu">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://kaxem.github.io/images/ArgoCD/2.webp">
 <meta property="og:image" content="http://kaxem.github.io/images/ArgoCD/argo.png">
-<meta property="article:published_time" content="2023-10-17T15:52:54.552Z">
+<meta property="article:published_time" content="2023-10-17T16:05:44.445Z">
 <meta property="article:author" content="Xai">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://kaxem.github.io/images/ArgoCD/2.webp">
@@ -105,7 +105,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Whats-GitOps"><span class="toc-number">1.</span> <span class="toc-text">Whats GitOps?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#What-is-GitOps-workflow"><span class="toc-number">2.</span> <span class="toc-text">What is GitOps workflow?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-we-need-GitOps"><span class="toc-number">3.</span> <span class="toc-text">Why we need GitOps?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pros-of-GitOps-Rolling-back-in-GitOps-methode-is-easy-If-a-commit-breaks-k8s-we-can-use-git-revert-into-last-commit-Increases-Security-you-dont-have-to-give-every-team-member-to-execute-changes-Only-CD-pipeline-needs-access-With-traditional-CI-x2F-CD-you-need-to-install-kubectl-or-helm-in-order-of-applying-changes-into-k8s-you-need-to-config-access-to-K8s-in-your-runner"><span class="toc-number">3.1.</span> <span class="toc-text">### Pros of GitOps- Rolling back in GitOps methode is easy- If a commit breaks k8s we can use git revert into last commit- Increases Security: you dont have to give every team member to execute changes. Only CD pipeline needs access.    - With traditional CI&#x2F;CD you need to install kubectl or helm in order of applying changes into k8s.    - you need to config access to K8s in your runner. </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Argo-CD"><span class="toc-number">4.</span> <span class="toc-text">Argo CD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArgoCD-advantages"><span class="toc-number">4.0.1.</span> <span class="toc-text">ArgoCD advantages</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Working-with-multiple-clusters"><span class="toc-number">4.0.1.1.</span> <span class="toc-text">Working with multiple clusters:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Argo-CD-configuration"><span class="toc-number">4.1.</span> <span class="toc-text">Argo CD configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArgoCD-best-practices"><span class="toc-number">4.1.1.</span> <span class="toc-text">ArgoCD best practices</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Whats-GitOps"><span class="toc-number">1.</span> <span class="toc-text">Whats GitOps?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-GitOps-workflow"><span class="toc-number">2.</span> <span class="toc-text">What is GitOps workflow?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-we-need-GitOps"><span class="toc-number">3.</span> <span class="toc-text">Why we need GitOps?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pros-of-GitOps"><span class="toc-number">4.</span> <span class="toc-text">Pros of GitOps</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Argo-CD"><span class="toc-number"></span> <span class="toc-text">Argo CD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ArgoCD-advantages"><span class="toc-number">1.</span> <span class="toc-text">ArgoCD advantages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Argo-CD-configuration"><span class="toc-number">2.</span> <span class="toc-text">Argo CD configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArgoCD-best-practices"><span class="toc-number">3.</span> <span class="toc-text">ArgoCD best practices</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -129,7 +129,7 @@
       
     <div class="postdate">
       
-        <time datetime="2023-10-17T15:52:54.552Z" itemprop="datePublished">2023-10-17</time>
+        <time datetime="2023-10-17T16:05:44.445Z" itemprop="datePublished">2023-10-17</time>
         
       
     </div>
@@ -144,22 +144,27 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h1 id="Whats-GitOps"><a href="#Whats-GitOps" class="headerlink" title="Whats GitOps?"></a>Whats GitOps?</h1><pre><code>GitOps principles uses git repositories as single source of truth to deliver infrastructure as code.
-</code></pre>
-<h1 id="What-is-GitOps-workflow"><a href="#What-is-GitOps-workflow" class="headerlink" title="What is GitOps workflow?"></a>What is GitOps workflow?</h1><pre><code>GitOps uses Git as the version control system for infrastructure configurations.
-CI-CD pipelines usually triggered by external event like code being pushed to a repository.
-</code></pre>
-<p><strong>In GitOps workflow, changes are made using pull requests which modify state in the Git repository.</strong></p>
-<h1 id="Why-we-need-GitOps"><a href="#Why-we-need-GitOps" class="headerlink" title="Why we need GitOps?"></a>Why we need GitOps?</h1><pre><code>in Basic CI/CD every one has access to kubernetes cluster and can change it by pushing code into git repository. So it make it hard to trace who executed what in kubernetes.
-But in GitOps methode an agent is installed on K8s Cluster, it tracks changes between git state and kubernetes state then if there was an change **Pulls** it from Git repository.
-</code></pre>
-<h2 id="Pros-of-GitOps-Rolling-back-in-GitOps-methode-is-easy-If-a-commit-breaks-k8s-we-can-use-git-revert-into-last-commit-Increases-Security-you-dont-have-to-give-every-team-member-to-execute-changes-Only-CD-pipeline-needs-access-With-traditional-CI-x2F-CD-you-need-to-install-kubectl-or-helm-in-order-of-applying-changes-into-k8s-you-need-to-config-access-to-K8s-in-your-runner"><a href="#Pros-of-GitOps-Rolling-back-in-GitOps-methode-is-easy-If-a-commit-breaks-k8s-we-can-use-git-revert-into-last-commit-Increases-Security-you-dont-have-to-give-every-team-member-to-execute-changes-Only-CD-pipeline-needs-access-With-traditional-CI-x2F-CD-you-need-to-install-kubectl-or-helm-in-order-of-applying-changes-into-k8s-you-need-to-config-access-to-K8s-in-your-runner" class="headerlink" title="### Pros of GitOps- Rolling back in GitOps methode is easy- If a commit breaks k8s we can use git revert into last commit- Increases Security: you dont have to give every team member to execute changes. Only CD pipeline needs access.    - With traditional CI&#x2F;CD you need to install kubectl or helm in order of applying changes into k8s.    - you need to config access to K8s in your runner. "></a><img src="/images/ArgoCD/2.webp" alt="pull based"><br>### Pros of GitOps<br>- Rolling back in GitOps methode is easy<br>- If a commit breaks k8s we can use <code>git revert</code> into last commit<br>- <strong>Increases Security</strong>: you dont have to give every team member to execute changes. Only CD pipeline needs access.<br>    - With traditional CI&#x2F;CD you need to install kubectl or helm in order of applying changes into k8s.<br>    - you need to config access to K8s in your runner. </h2><h1 id="Argo-CD"><a href="#Argo-CD" class="headerlink" title="Argo CD"></a>Argo CD</h1><pre><code>Expect of external access to k8s we have ArgoCD as a part of k8s cluster
+    <h2 id="Whats-GitOps"><a href="#Whats-GitOps" class="headerlink" title="Whats GitOps?"></a>Whats GitOps?</h2><p>GitOps principles uses git repositories as single source of truth to deliver infrastructure as code.</p>
+<h2 id="What-is-GitOps-workflow"><a href="#What-is-GitOps-workflow" class="headerlink" title="What is GitOps workflow?"></a>What is GitOps workflow?</h2><p>GitOps uses Git as the version control system for infrastructure configurations.<br>CI-CD pipelines usually triggered by external event like code being pushed to a repository.<br><strong>In GitOps workflow, changes are made using pull requests which modify state in the Git repository.</strong></p>
+<h2 id="Why-we-need-GitOps"><a href="#Why-we-need-GitOps" class="headerlink" title="Why we need GitOps?"></a>Why we need GitOps?</h2><p>in Basic CI&#x2F;CD every one has access to kubernetes cluster and can change it by pushing code into git repository. So it make it hard to trace who executed what in kubernetes.<br>But in GitOps methode an agent is installed on K8s Cluster, it tracks changes between git state and kubernetes state then if there was an change <strong>Pulls</strong> it from Git repository.</p>
+<p><img src="/images/ArgoCD/2.webp" alt="pull based"></p>
+<h2 id="Pros-of-GitOps"><a href="#Pros-of-GitOps" class="headerlink" title="Pros of GitOps"></a>Pros of GitOps</h2><ul>
+<li>Rolling back in GitOps methode is easy</li>
+<li>If a commit breaks k8s we can use <code>git revert</code> into last commit</li>
+<li><strong>Increases Security</strong>: you dont have to give every team member to execute changes. Only CD pipeline needs access.<ul>
+<li>With traditional CI&#x2F;CD you need to install kubectl or helm in order of applying changes into k8s.</li>
+<li>you need to config access to K8s in your runner.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="Argo-CD"><a href="#Argo-CD" class="headerlink" title="Argo CD"></a>Argo CD</h1><pre><code>Expect of external access to k8s we have ArgoCD as a part of k8s cluster
 </code></pre>
 <p><img src="/images/ArgoCD/argo.png" alt="Argo"></p>
 <ul>
 <li>Argo CD helps us to seperate CI from CD: in other words CI will change bu developers and DevOps engineers but CD is automatically done by Argo.</li>
 </ul>
-<h3 id="ArgoCD-advantages"><a href="#ArgoCD-advantages" class="headerlink" title="ArgoCD advantages"></a>ArgoCD advantages</h3><ul>
+<h2 id="ArgoCD-advantages"><a href="#ArgoCD-advantages" class="headerlink" title="ArgoCD advantages"></a>ArgoCD advantages</h2><ul>
 <li><p>Git as source of truth: If someone apply a change in k8s cluster manually, ArgoCD checks diffrents between actual state(kubernetes state) and Desired state(last modified state in git repository), then it change git’s state automatically. This helps to k8s manifests in git remain source of truth.</p>
 </li>
 <li><p>Easy rollback: expect of using <code>kubectl delete</code> or such as things we can easily roll back to last state with argo cd.</p>
@@ -168,21 +173,16 @@ But in GitOps methode an agent is installed on K8s Cluster, it tracks changes be
 </li>
 <li><p><strong>K8s Access Control</strong>: as security best practice, you dont give everyone access to k8s cluster. u just give them access to git repositories.</p>
 </li>
-<li><p>Working with multiple clusters: For example we have 3 replicas of k8s cluster in different regions, we can use only one argo agent to sync these clusters.</p>
+<li><p>Working with multiple clusters:<br/><br>assume that we have different enviroments like developement and staging and production and we don’t want to one config for each of them. thers’s two way to handle this<br/> 	1. Use multiple braches and diffrent configs (it’s not best practice)<br/> 	2. Use overlays in Kustomize<br>with this tool we can make base files then overlay configs for each enviroment.</p>
 </li>
 </ul>
-<h4 id="Working-with-multiple-clusters"><a href="#Working-with-multiple-clusters" class="headerlink" title="Working with multiple clusters:"></a>Working with multiple clusters:</h4><pre><code>assume that we have different enviroments like developement and staging and production and we don&#39;t want to one config for each of them. thers&#39;s two way to handle this
-1. Use multiple braches and diffrent configs (it&#39;s not best practice)
-2. Use overlays in Kustomize
-</code></pre>
-<p>with this tool we can make base files then overlay configs for each enviroment.</p>
-<h2 id="Argo-CD-configuration"><a href="#Argo-CD-configuration" class="headerlink" title="Argo CD configuration"></a>Argo CD configuration</h2><p>let’s take a look at minimal argo config:<br/><br><code>apiVersion: argoproj.io/v1alpha1 kind: Application metadata:   name: guestbook   namespace: argocd spec:   project: default   source:     repoURL: https://github.com/argoproj/argocd-example-apps.git     targetRevision: HEAD     path: guestbook   destination:     server: https://kubernetes.default.svc     namespace: guestbook</code></p>
+<h2 id="Argo-CD-configuration"><a href="#Argo-CD-configuration" class="headerlink" title="Argo CD configuration"></a>Argo CD configuration</h2><p>let’s take a look at minimal argo config:<br/><br>    <code>apiVersion: argoproj.io/v1alpha1     kind: Application     metadata:     name: guestbook     namespace: argocd     spec:     project: default     source:         repoURL: https://github.com/argoproj/argocd-example-apps.git         targetRevision: HEAD         path: guestbook     destination:         server: https://kubernetes.default.svc         namespace: guestbook</code></p>
 <ul>
 <li>apiVersion: latest argo version</li>
 <li>source: source of git repository</li>
 <li>destination: with k8s service to deploy on</li>
 </ul>
-<h3 id="ArgoCD-best-practices"><a href="#ArgoCD-best-practices" class="headerlink" title="ArgoCD best practices"></a>ArgoCD best practices</h3><pre><code>1. Use separate Git reposiroty for kubernetes manifests to keep Kubernetes configs separate from source code is suggested for cleaner audit log and separation access.
+<h2 id="ArgoCD-best-practices"><a href="#ArgoCD-best-practices" class="headerlink" title="ArgoCD best practices"></a>ArgoCD best practices</h2><pre><code>1. Use separate Git reposiroty for kubernetes manifests to keep Kubernetes configs separate from source code is suggested for cleaner audit log and separation access.
 
 2. Use Git-SHA tags or SemVer tag to immute manifests.
 </code></pre>
@@ -227,7 +227,7 @@ But in GitOps methode an agent is installed on K8s Cluster, it tracks changes be
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Whats-GitOps"><span class="toc-number">1.</span> <span class="toc-text">Whats GitOps?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#What-is-GitOps-workflow"><span class="toc-number">2.</span> <span class="toc-text">What is GitOps workflow?</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-we-need-GitOps"><span class="toc-number">3.</span> <span class="toc-text">Why we need GitOps?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pros-of-GitOps-Rolling-back-in-GitOps-methode-is-easy-If-a-commit-breaks-k8s-we-can-use-git-revert-into-last-commit-Increases-Security-you-dont-have-to-give-every-team-member-to-execute-changes-Only-CD-pipeline-needs-access-With-traditional-CI-x2F-CD-you-need-to-install-kubectl-or-helm-in-order-of-applying-changes-into-k8s-you-need-to-config-access-to-K8s-in-your-runner"><span class="toc-number">3.1.</span> <span class="toc-text">### Pros of GitOps- Rolling back in GitOps methode is easy- If a commit breaks k8s we can use git revert into last commit- Increases Security: you dont have to give every team member to execute changes. Only CD pipeline needs access.    - With traditional CI&#x2F;CD you need to install kubectl or helm in order of applying changes into k8s.    - you need to config access to K8s in your runner. </span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Argo-CD"><span class="toc-number">4.</span> <span class="toc-text">Argo CD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArgoCD-advantages"><span class="toc-number">4.0.1.</span> <span class="toc-text">ArgoCD advantages</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Working-with-multiple-clusters"><span class="toc-number">4.0.1.1.</span> <span class="toc-text">Working with multiple clusters:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Argo-CD-configuration"><span class="toc-number">4.1.</span> <span class="toc-text">Argo CD configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArgoCD-best-practices"><span class="toc-number">4.1.1.</span> <span class="toc-text">ArgoCD best practices</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Whats-GitOps"><span class="toc-number">1.</span> <span class="toc-text">Whats GitOps?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-GitOps-workflow"><span class="toc-number">2.</span> <span class="toc-text">What is GitOps workflow?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-we-need-GitOps"><span class="toc-number">3.</span> <span class="toc-text">Why we need GitOps?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pros-of-GitOps"><span class="toc-number">4.</span> <span class="toc-text">Pros of GitOps</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Argo-CD"><span class="toc-number"></span> <span class="toc-text">Argo CD</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ArgoCD-advantages"><span class="toc-number">1.</span> <span class="toc-text">ArgoCD advantages</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Argo-CD-configuration"><span class="toc-number">2.</span> <span class="toc-text">Argo CD configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArgoCD-best-practices"><span class="toc-number">3.</span> <span class="toc-text">ArgoCD best practices</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
