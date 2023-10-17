@@ -3,7 +3,7 @@ title: ArgoCD, why not?
 ---
 ## Whats GitOps?
 GitOps principles uses git repositories as single source of truth to deliver infrastructure as code.
-## What is GitOps workflow?
+## GitOps workflow?
 GitOps uses Git as the version control system for infrastructure configurations.
 CI-CD pipelines usually triggered by external event like code being pushed to a repository.
 **In GitOps workflow, changes are made using pull requests which modify state in the Git repository.**
@@ -41,20 +41,20 @@ with this tool we can make base files then overlay configs for each enviroment.
 ## Argo CD configuration
 
 let's take a look at minimal argo config:<br/>
-	`apiVersion: argoproj.io/v1alpha1
-	kind: Application
-	metadata:
-	name: guestbook
-	namespace: argocd
-	spec:
-	project: default
-	source:
-		repoURL: https://github.com/argoproj/argocd-example-apps.git
-		targetRevision: HEAD
-		path: guestbook
-	destination:
-		server: https://kubernetes.default.svc
-		namespace: guestbook`
+	apiVersion: argoproj.io/v1alpha1</br>
+	kind: Application</br>
+	metadata:</br>
+	name: guestbook</br>
+	namespace: argocd</br>
+	spec:</br>
+	project: default</br>
+	source:</br>
+		repoURL: https://github.com/argoproj/argocd-example-apps.git</br>
+		targetRevision: HEAD</br>
+		path: guestbook</br>
+	destination:</br>
+		server: https://kubernetes.default.svc</br>
+		namespace: guestbook</br>
 * apiVersion: latest argo version
 * source: source of git repository
 * destination: with k8s service to deploy on
