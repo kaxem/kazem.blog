@@ -23,7 +23,7 @@ But in GitOps methode an agent is installed on K8s Cluster, it tracks changes be
 	- you need to config access to K8s in your runner. 
 ------------------------
 # Argo CD
-	Expect of external access to k8s we have ArgoCD as a part of k8s cluster
+Expect of external access to k8s we have ArgoCD as a part of k8s cluster<br/>
 ![Argo](/images/ArgoCD/argo.png)
 - Argo CD helps us to seperate CI from CD: in other words CI will change bu developers and DevOps engineers but CD is automatically done by Argo. 
 ## ArgoCD advantages
@@ -60,9 +60,8 @@ let's take a look at minimal argo config:<br/>
 * destination: with k8s service to deploy on
 
 ## ArgoCD best practices
-	1. Use separate Git reposiroty for kubernetes manifests to keep Kubernetes configs separate from source code is suggested for cleaner audit log and separation access.
-	
-	2. Use Git-SHA tags or SemVer tag to immute manifests.
+1. Use separate Git reposiroty for kubernetes manifests to keep Kubernetes configs separate from source code is suggested for cleaner audit log and separation access.
+2. Use Git-SHA tags or SemVer tag to immute manifests.
 
 
 <br/>
