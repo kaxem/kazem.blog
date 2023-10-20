@@ -1,6 +1,6 @@
 ---
 title: Ban Governments not people
-
+date: 2023-04-03
 ---
 we people of Iran are lonelier then ever! Iran’s Regime is blocking internet for people as white list, means we are allowed to access limited websites they specified for us.
 They even blocked all kind of VPN’s and tunnels. in fact they block packets we’re sending if they don’t like it.
