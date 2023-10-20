@@ -1,5 +1,6 @@
 ---
 title: Software Engineers are NOT your slaves!
+date: 2023-01-12
 ---
 Recently I started to apply for a DevOps Engineer position.
 Every job offer I saw, had an endless list of requirement skills. and they offer minimum payment, in Iran it is 5,400,000 tomans per mounth, that equals to 135$.
