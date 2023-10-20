@@ -2,8 +2,6 @@
 title: ArgoCD, why not?
 date: 2023-10-17
 tags: GitOps
-tags: DevOps
-tags: K8s
 ---
 ## Whats GitOps?
 GitOps principles uses git repositories as single source of truth to deliver infrastructure as code.
