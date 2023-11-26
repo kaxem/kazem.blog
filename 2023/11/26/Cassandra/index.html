@@ -152,7 +152,7 @@
 
   <div class="content" itemprop="articleBody">
     <p>There was an issue when I mounted a configmap to the &#x2F;etc&#x2F;cassandra&#x2F;cassandra.yaml pod. I encountered the error: <code>/etc/cassandra read-only filesystem</code>.<br><img src="/images/Cassandra/y7.gif" alt="pepe-cry"><br>After attempting various solutions, such as running the image as the cassandra user with uid&#x3D;999 &amp; gid&#x3D;999 (specified in the <a target="_blank" rel="noopener" href="https://github.com/docker-library/cassandra/blob/master/5.0/Dockerfile">official cassandra image</a>), using a bash script in the statefulset <code>command: chmod 755 /etc/cassandra</code>, or using <code>command:[&quot;-Dcassandra.config=file:///path/to/mounted/cassandra.yaml&quot;]</code>, the problem persisted. so I tried some ways that changed my life.</p>
-<p>I tried 3 different attemptsto deploy it, choose one based on your needs:<br><strong>Deploy Cassandra with operator</strong><br/><br>This method is suggested because you’re not engaging with cassandra’s complexility.<br><strong>Deploy Cassandra with Bitnami Helm</strong><br/><br>It’s not working for kubernetes &lt;v1.19<br>**Deploy cassandra by shooting yourself in the foot**<br><img src="/images/Cassandra/3nRK.gif" alt="pepe-cry" height="50%" weight="50%"></p>
+<p>I tried 3 different attemptsto deploy it, choose one based on your needs:<br><strong>Deploy Cassandra with operator</strong><br>This method is suggested because you’re not engaging with cassandra’s complexility.<br/><br><strong>Deploy Cassandra with Bitnami Helm</strong><br>It’s not working for kubernetes &lt;v1.19 <br/><br><strong>Deploy cassandra by shooting yourself in the foot</strong><br><img src="/images/Cassandra/3nRK.gif" alt="pepe-cry" height="50%" weight="50%"></p>
 <h1 id="Deploy-Cassandra-with-operator"><a href="#Deploy-Cassandra-with-operator" class="headerlink" title="Deploy Cassandra with operator"></a>Deploy Cassandra with operator</h1><ol>
 <li>first of all we need to install cert-manager to deploy cassandra operator<ol>
 <li>add cert-manager repo: <code>helm repo add cert-manager https://charts.jetstack.io</code> </li>
@@ -160,7 +160,7 @@
 </ol>
 </li>
 </ol>
-<p><strong>why we change repositiry to our registery?</strong></p>
+<p><strong>why we change repository to Private?</strong></p>
 <ul>
 <li>&lt;private-registery.io&gt; act like a proxy we don’t need to change dns server in case of 403 error.</li>
 <li>&lt;private-registery.io&gt; saves image so for next deploying, pulling is so much faster <ol start="3">
