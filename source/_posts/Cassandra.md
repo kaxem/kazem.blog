@@ -14,7 +14,7 @@ This method is suggested because you're not engaging with cassandra's complexili
 **Deploy Cassandra with Bitnami Helm**<br/>
 It's not working for kubernetes <v1.19
 **Deploy cassandra by shooting yourself in the foot**
-![pepe-cry](/images/Cassandra/3nRK.gif)
+<img src="/images/Cassandra/3nRK.gif" alt="pepe-cry" height="50%" weight="50%">
 
 # Deploy Cassandra with operator
 1. first of all we need to install cert-manager to deploy cassandra operator
@@ -43,7 +43,7 @@ It's not working for kubernetes <v1.19
 - <private-registery.io> act like a proxy we don't need to change dns server in case of 403 error.
 - <private-registery.io> saves image so for next deploying, pulling is so much faster 
   3. install cert-manager `helm install my-cert-manager2 cert-manager/cert-manager --version 1.0.0 --namespace cert-manager --create-namespace -f values.yaml`            
-## install cassandra operator:
+## Cassandra operator installation:
 To install with cassandra operator and cluster first you should go to `https://artifacthub.io/packages/helm/k8ssandra/cass-operator`
 1. add repo with `helm repo add k8ssandra https://helm.k8ssandra.io/`
 2. update repo `helm repo update`
@@ -57,7 +57,7 @@ paste following configs in values.yaml:
 ```
 4. install cassandra operator: `helm install cassandra-operator k8ssandra/cass-operator --version 0.29.2 --namespace cass-operator --create-namespace -f cass-values.yaml`
 
-## install cassandra cluster
+## Cassandra cluster installation
 Install k8s cluster helm by using below configs:
 ```
 nameOverride: "dc1"
@@ -95,9 +95,8 @@ spec:
 After installing I've got this error:
 >Error: INSTALLATION FAILED: unable to build kubernetes objects from release manifest: error validating "": error validating data: ValidationError(StatefulSet.spec.template.spec.containers[0].securityContext): unknown field "seccompProfile" in io.k8s.api.core.v1.SecurityContext
 >
-with a search i found out `seccompProfile` field is not supported in k8s v 1.17 
-so i went another way:
-
+With a search I found out `seccompProfile` field is not supported in k8s v 1.17 
+so I went another way:
 # Deploy Cassandra with Bitnami Helm 
 Install helm chart with `helm install cass-cluster exaRepo/k8ssandra-cluster --namespace cass-operator -f cass-cluster.yaml`
 For install: 
@@ -155,8 +154,8 @@ This is GitLab ci to build and push image to private registery then use it in st
     script:
         - cd path/to/image/
         - docker image build . -f Dockerfile
-        -t registery/cassandra:${CI_COMMIT_SHA}
-        -t registery/cassandra:latest
+         -t registery/cassandra:${CI_COMMIT_SHA}
+         -t registery/cassandra:latest
         - docker image push registery/cassandra:${CI_COMMIT_SHA}
         - docker image push registery/cassandra:latest
 
@@ -178,7 +177,7 @@ This is GitLab ci to build and push image to private registery then use it in st
         - kubectl apply -f ./cassandra-test --namespace=twitter
 ```
 
-after building this image I used it in statefulset.yaml:
+After building this image I used it in statefulset.yaml:
 ```
 apiVersion: apps/v1
 kind: StatefulSet
