@@ -28,9 +28,10 @@ social_links:
   github: https://github.com/kaxem
   ##twitter: /
   ##facebook: /
-  reddit: https://www.reddit.com/user/kaaaxem
-  medium: https://medium.com/@liftyourskinnyfist
-  linkedin: https://www.linkedin.com/in/kazem-bolandnazar-150770255/
+  # reddit: https://www.reddit.com/user/kaaaxem
+  # medium: https://medium.com/@liftyourskinnyfist
+  linkedin: https://www.linkedin.com/in/kazem-bolandnazar
+  soundcloud: https://soundcloud.com/xaiJ
   mail: mailto:kaaxem@yahoo.com
 
 # Customize the overview with displaying a tagcloud on the index page.
@@ -64,8 +65,8 @@ post:
 # Customize the copyright years
 # Note: if start_year/end_year not provided, will use current year.
 copyright:
-  start_year: 2016
-  end_year:
+  start_year: 2022
+  end_year: 2025
 
 # Customize the 404 page
 # Options:
