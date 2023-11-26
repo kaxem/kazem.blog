@@ -2,8 +2,9 @@
     <%- partial('_partial/post/gallery') %>
     <div class="content" itemprop="articleBody">
         <% if (theme.error_404.enabled && theme.error_404.title && theme.error_404.description ) { %>
-            <h1 style="margin:auto"><%= theme.error_404.title %></h1>
-                <img src="/images/404.gif" alt=eye style="margin:auto">
+            <!-- <h1 style="margin:auto"><%= theme.error_404.title %></h1> -->
+            <h1 class="posttitle">404</h1>    
+            <img src="/images/404.gif" alt=eye style="margin:auto">
             <!-- <p><%= theme.error_404.description %></p> -->
         <% } %>
     </div>
