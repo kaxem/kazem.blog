@@ -1143,7 +1143,7 @@ article .content blockquote {
   margin: 1rem 10px;
   padding: 0.5em 10px;
   background-color: #2F2D39;
-  color: ##E9E9ED;
+  color: #E9E9ED;
   quotes: "\201C" "\201D" "\2018" "\2019";
   font-weight: 450;
 }
@@ -1513,18 +1513,18 @@ article .content .caption {
   content: ")";
 }
 .highlight {
-  color: #333;
-  background: #f8f8f8;
+  color: #fff;
+  background: #200018;
 }
 .highlight .code .comment,
 .highlight .code .quote {
-  color: #998;
+  color: rgb(255, 255, 255);
   font-style: italic;
 }
 .highlight .code .keyword,
 .highlight .code .selector-tag,
 .highlight .code .subst {
-  color: #333;
+  color: #fff;
   font-weight: bold;
 }
 .highlight .code .number,
@@ -1536,12 +1536,12 @@ article .content .caption {
 }
 .highlight .code .string,
 .highlight .code .doctag {
-  color: #d14;
+  color: #fff;
 }
 .highlight .code .title,
 .highlight .code .section,
 .highlight .code .selector-id {
-  color: #900;
+  color: #fff;
   font-weight: bold;
 }
 .highlight .code .subst {
@@ -1603,18 +1603,21 @@ pre code {
   border: none;
 }
 code {
-  padding: 0 5px;
-  border: 1px dotted #666;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  padding: 10px 15px;
+  border-radius: 4px;
+  background: #200018;
+  font-family: 'Source Code Pro', monospace;
+  -webkit-border-radius: 4px;
 }
 .highlight {
   overflow-x: auto;
   margin: 1rem 0;
   padding: 10px 15px;
   border-radius: 4px;
-  background: #dedcd9;
-  font-family: "Menlo", "Meslo LG", monospace;
+  background: #200018;
+  font-family: 'Source Code Pro', monospace;
   -webkit-border-radius: 4px;
 }
 .highlight figcaption {

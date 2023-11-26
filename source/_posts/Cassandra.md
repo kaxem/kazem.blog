@@ -8,19 +8,19 @@ After attempting various solutions, such as running the image as the cassandra u
 
 
 I tried 3 different attemptsto deploy it, choose one based on your needs:
-1. [Deploy Cassandra with operator](#deploy-cassandra-with-operator)
-* This method is suggested because you're not engaging with cassandra's complexility.
-2. [Deploying Cassandra with Bitnami Helm](#deploying-cassandra-with-bitnami-helm)
-* It's not working for kubernetes <v1.19
-3. [Deploy cassandra with Shooting yourself in foot](#deploy-cassandra-with-shooting-yourself-in-foot)
-![pepe-cry](/images/Cassandra/pepepower-pepe-cry.gif)
+1. Deploy Cassandra with operator<br/>
+This method is suggested because you're not engaging with cassandra's complexility.
+2. Deploy Cassandra with Bitnami Helm<br/>
+It's not working for kubernetes <v1.19
+3. Deploy cassandra by shooting yourself in the foot
+![pepe-cry](/images/Cassandra/pepe-the-frog-sad.gif)
 
 # Deploy Cassandra with operator
 1. first of all we need to install cert-manager to deploy cassandra operator
    1. add cert-manager repo: `helm repo add cert-manager https://charts.jetstack.io` 
    2. create a values.yaml to change default values of k8ssandra repo and
       paste following configs in values.yaml:
-     ```
+```
      image:
       repository: <private-registery.io>/jetstack/cert-manager-controller
     webhook:
@@ -34,7 +34,10 @@ I tried 3 different attemptsto deploy it, choose one based on your needs:
       repository: <private-registery.io>/jetstack/cert-manager-acmesolver
     startupapicheck:
      image:
-      repository: <private-registery.io>/jetstack/cert-manager-ctl ```
+      repository: <private-registery.io>/jetstack/cert-manager-ctl 
+    
+```
+   
 **why we change repositiry to our registery?**
 - <private-registery.io> act like a proxy we don't need to change dns server in case of 403 error.
 - <private-registery.io> saves image so for next deploying, pulling is so much faster 
@@ -45,9 +48,12 @@ To install with cassandra operator and cluster first you should go to `https://a
 2. update repo `helm repo update`
 3. create a values.yaml to change default values of k8ssandra repo:
 paste following configs in values.yaml:
-    ```image:
+```
+    image:
       repository: <private-registery.io>/k8ssandra/cass-operator
-      registryOverride: <private-registery.io>```
+      registryOverride: <private-registery.io>
+
+```
 4. install cassandra operator: `helm install cassandra-operator k8ssandra/cass-operator --version 0.29.2 --namespace cass-operator --create-namespace -f cass-values.yaml`
 
 ## install cassandra cluster
@@ -86,16 +92,18 @@ spec:
     - name: rack1
 ```
 After installing I've got this error:
-> Error: INSTALLATION FAILED: unable to build kubernetes objects from release manifest: error validating "": error validating data: ValidationError(StatefulSet.spec.template.spec.containers[0].securityContext): unknown field "seccompProfile" in io.k8s.api.core.v1.SecurityContext
+>Error: INSTALLATION FAILED: unable to build kubernetes objects from release manifest: error validating "": error validating data: ValidationError(StatefulSet.spec.template.spec.containers[0].securityContext): unknown field "seccompProfile" in io.k8s.api.core.v1.SecurityContext
+>
 with a search i found out `seccompProfile` field is not supported in k8s v 1.17 
 so i went another way:
 
-# Deploying Cassandra with Bitnami Helm 
+# Deploy Cassandra with Bitnami Helm 
 Install helm chart with `helm install cass-cluster exaRepo/k8ssandra-cluster --namespace cass-operator -f cass-cluster.yaml`
 For install: 
 first add repo: `helm repo add bitnami https://charts.bitnami.com/bitnami`
 the update helm: `helm repo update `
 then create a values file: 
+
 ```
 image:
   registry: <private-registery.io>
@@ -112,11 +120,12 @@ resources:
     maxHeapSize: 2G
     newHeapSize: 1G
 ```
+
 The limits line is because of an error I've got for pod is not creating so based on this [issue](https://github.com/bitnami/charts/issues/5295) I changed this values.
 This method is not working in k8s version <1.19 let's try another way.
 
 ---------
-# Deploy cassandra with Shooting yourself in foot
+# Deploy cassandra by shooting yourself in the foot
 **Let's build our custome cassandra image:**
 After days of trying I finally give up. no more charts and operators!
 I tried to solve main problem "**Mounting Cassandra.yaml into /etc/cassandra/ facing `read-only file system` error**"
@@ -130,12 +139,11 @@ COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 CMD ["-Dcassandra.config=file:///app/cassandra.yaml"]
 ENTRYPOINT ["docker-entrypoint.sh"]
-
 ```
 
-* Extra work:
-    This is GitLab ci to build and push image to private registery then use it in statefulset:
-    ```
+**Extra work:**
+This is GitLab ci to build and push image to private registery then use it in statefulset:
+```
     cassandra-build-on-merge:
     stage: build
     image: docker.io/docker:stable
@@ -166,7 +174,8 @@ ENTRYPOINT ["docker-entrypoint.sh"]
     script:
         - cd technologies/Staging
         - sed -ie "s/IMAGE-VERSION/$CI_COMMIT_SHA/g" cassandra-test/cassandra-sts.yaml #### we change image version in sts to CI_COMMIT_SHA
-        - kubectl apply -f ./cassandra-test --namespace=twitter```
+        - kubectl apply -f ./cassandra-test --namespace=twitter
+```
 
 after building this image I used it in statefulset.yaml:
 ```
@@ -242,7 +251,6 @@ spec:
         persistentVolumeClaim:
           claimName: cassandra-test-pv-claim
 
-
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -259,7 +267,7 @@ spec:
 ```
 We should pass pod ip to image with `POD_IP = valueFrom.fieldRef.fieldPath.status.podIP` in statefulset. It's important because we should set `listen_address` in cassandra.yaml to this ip.
 [docker-entrypoint.sh](https://github.com/docker-library/cassandra/blob/master/5.0/docker-entrypoint.sh) will change these addresses by default but we need to change this entrypoint for new image we're building.
- ```
+```
  #!/bin/bash
 set -e
 
@@ -362,4 +370,4 @@ Exec into pod then use `cqlsh` to connect to cassandra thenuse  query `SELECT * 
 ![boom](/images/Cassandra/BOOM.png)
 
 GoodLuck BoyKz!
-![pepe-coin](/images/Cassandra/pepe-pepe-coin.gif)
+![pepe-goose](/images/Cassandra/pepe-the-frog-goose-ride.gif)
