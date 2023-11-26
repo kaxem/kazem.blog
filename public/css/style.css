@@ -1605,9 +1605,12 @@ pre code {
 code {
   overflow-x: auto;
   margin: 1rem 0;
-  padding: 10px 15px;
-  border-radius: 4px;
-  background: #200018;
+  font-weight:600;
+  padding: .05rem .2rem;
+  border-radius: .01rem;
+  border-color: #333842;
+  font-weight:600;
+  background: #2d3039;
   font-family: 'Source Code Pro', monospace;
   -webkit-border-radius: 4px;
 }

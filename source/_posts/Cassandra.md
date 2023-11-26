@@ -4,16 +4,17 @@ date: 2023-11-26
 tags: DevOps
 ---
 There was an issue when I mounted a configmap to the /etc/cassandra/cassandra.yaml pod. I encountered the error: `/etc/cassandra read-only filesystem`.
+![pepe-cry](/images/Cassandra/y7.gif)
 After attempting various solutions, such as running the image as the cassandra user with uid=999 & gid=999 (specified in the [official cassandra image](https://github.com/docker-library/cassandra/blob/master/5.0/Dockerfile)), using a bash script in the statefulset `command: chmod 755 /etc/cassandra`, or using `command:["-Dcassandra.config=file:///path/to/mounted/cassandra.yaml"]`, the problem persisted. so I tried some ways that changed my life.
 
 
 I tried 3 different attemptsto deploy it, choose one based on your needs:
-1. Deploy Cassandra with operator<br/>
+**Deploy Cassandra with operator**<br/>
 This method is suggested because you're not engaging with cassandra's complexility.
-2. Deploy Cassandra with Bitnami Helm<br/>
+**Deploy Cassandra with Bitnami Helm**<br/>
 It's not working for kubernetes <v1.19
-3. Deploy cassandra by shooting yourself in the foot
-![pepe-cry](/images/Cassandra/pepe-the-frog-sad.gif)
+**Deploy cassandra by shooting yourself in the foot**
+![pepe-cry](/images/Cassandra/3nRK.gif)
 
 # Deploy Cassandra with operator
 1. first of all we need to install cert-manager to deploy cassandra operator
@@ -366,8 +367,7 @@ exec "$@"
 I changed `_sed-in-place "$CASSANDRA_CONF/cassandra.yaml"  -r 's/(- seeds:).*/\1 "'"$CASSANDRA_SEEDS"'"/'` to
 `_sed-in-place "cassandra.yaml" -r 's/(- seeds:).*/\1 "'"$CASSANDRA_SEEDS"'"/'` This is our custome configuration in /app workdir. 
 After building image and deploying cassandra I checked pod to see if my has configs in cassandra.yaml has been added.
-Exec into pod then use `cqlsh` to connect to cassandra thenuse  query `SELECT * FROM system_views.settings ;` to see all configs and BOOM there are my configs:
-![boom](/images/Cassandra/BOOM.png)
+Exec into pod then use `cqlsh` to connect to cassandra thenuse  query `SELECT * FROM system_views.settings ;` to see all configs.
 
 GoodLuck BoyKz!
-![pepe-goose](/images/Cassandra/pepe-the-frog-goose-ride.gif)
+![yeaah](/images/Cassandra/xw.gif)
