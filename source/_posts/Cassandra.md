@@ -9,10 +9,10 @@ After attempting various solutions, such as running the image as the cassandra u
 
 
 I tried 3 different attemptsto deploy it, choose one based on your needs:
-**Deploy Cassandra with operator**<br/>
-This method is suggested because you're not engaging with cassandra's complexility.
-**Deploy Cassandra with Bitnami Helm**<br/>
-It's not working for kubernetes <v1.19
+**Deploy Cassandra with operator**
+This method is suggested because you're not engaging with cassandra's complexility.<br/>
+**Deploy Cassandra with Bitnami Helm**
+It's not working for kubernetes <v1.19 <br/>
 **Deploy cassandra by shooting yourself in the foot**
 <img src="/images/Cassandra/3nRK.gif" alt="pepe-cry" height="50%" weight="50%">
 
@@ -39,7 +39,7 @@ It's not working for kubernetes <v1.19
     
 ```
    
-**why we change repositiry to our registery?**
+**why we change repository to Private?**
 - <private-registery.io> act like a proxy we don't need to change dns server in case of 403 error.
 - <private-registery.io> saves image so for next deploying, pulling is so much faster 
   3. install cert-manager `helm install my-cert-manager2 cert-manager/cert-manager --version 1.0.0 --namespace cert-manager --create-namespace -f values.yaml`            
