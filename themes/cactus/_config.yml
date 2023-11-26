@@ -73,7 +73,7 @@ copyright:
 #   - enabled: whether to enable the 404 page (404.html).
 error_404:
   enabled: true
-  title: "404"
+  title: " "
   description: " "
 
 
