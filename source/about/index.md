@@ -13,7 +13,7 @@ Oct 2023 - Present
  
  ***SecOps Engineer*** at [DigiNote](https://www.linkedin.com/company/diginote/)
 Feb 2023 - Jul 2023 
-> in DigiNote I was responsible for:<br/>**Implementing CI/CD** <br/> **Azure Expertise**: Demonstrated hands-on experience with Azure services, including but not limited to Azure Kubernetes Service (AKS), Active Directory, and Azure Load Balancer.<br/> **Security Assurance**: Took charge of ensuring the security posture of our projects by conducting thorough reviews of pipelines and code. Regularly engaged in benchmarking activities to identify and address potential vulnerabilities, ensuring a robust and secure environment
+> in DigiNote I was responsible for:<br/>**Implementing CI/CD** <br/> **Azure Expertise**: Demonstrated hands-on experience with Azure services, including Azure Kubernetes Service (AKS), Active Directory, and Azure Load Balancer.<br/> **Security Assurance**: Took charge of ensuring the security posture of our projects by conducting thorough reviews of pipelines and code. Regularly engaged in benchmarking activities to identify and address potential vulnerabilities, ensuring a robust and secure environment
 
 # Skills:
 * Linux
