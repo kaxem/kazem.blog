@@ -1,7 +1,7 @@
 ---
 title: about
 ---
-![Xai](/images/Xai.jpeg)
+![Xai](/about/medoKaz.jpg)
 I am an innovative DevOps engineer with a keen interest in cyber security.
 I studied electrical engineering at [Tehran University](https://ut.ac.ir)
 In my free time, I enjoy participating in bug bounty programs and creating mixtapes. If you're interested, you can check out my mixtapes on [SoundCloud](https://soundcloud.com/xaiq).
