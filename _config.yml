@@ -124,7 +124,7 @@ social_links:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/kaxem/kaxem.github.io
+  repo: https://github.com/kaxem/kazem.blog
   branch: main
   token: ''
   message: [message]
