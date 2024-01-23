@@ -1,3 +1,8 @@
+---
+title: "Guardian Robots: The Crucial Role of DevSecOps in Cyber Security"
+date: 2024-01-24
+tags: DevOps
+---
 # Guardian Robots: The Crucial Role of DevSecOps in Cyber Security
 From the beginning of humanity, security has been one of the main foundations of people's concerns. As civilizations developed, security became increasingly important, take almost every aspect of human life. The desire for safety has always been closely tied to the concept of security.
 
@@ -15,41 +20,36 @@ SAST is a method employed to analyze both source code and infrastructure, identi
 Continuous Integration is responsible for ensuring that source code is prepared for deployment. In the realm of DevSecOps, additional layers of security measures are incorporated into this stage.
 ![CI](/images/DevSecOps/1.jpeg)
 1. **Checking Source Code for Known Vulnerabilities**
-By leveraging automated scripts and tools, we can systematically verify that our source code is free from known vulnerabilities. This step is crucial in fortifying the security of the codebase.
-
-There exists a plethora of scanning tools for this purpose, and several open-source options are particularly noteworthy. Some popular choices include:
+By leveraging automated scripts and tools, we can systematically verify that our source code is free from known vulnerabilities. This step is crucial in fortifying the security of the codebase.<br>There are some scanning tools for this purpose, and several open-source options are particularly noteworthy. Some popular choices include:
 1. [Trivy](https://github.com/aquasecurity/trivy)
 2. [Grype](https://github.com/anchore/grype)
 3. [Clair](https://github.com/quay/clair)
 These tools could enhance security by identifying and addressing potential vulnerabilities during the CI process.
 
+
 2. **Checking Source Code for Secrets**
 In the pursuit of a secure codebase, it is crucial to identify and eliminate any potential secrets that may be exposed, it's environment variables or hardcoded directly into the source code. This action is essential before proceeding with the application build process. Here are some effective options for this purpose:
-
 1. [Trufflehog](https://github.com/trufflesecurity/trufflehog):
 Trufflehog is a robust tool designed to search for high-entropy strings, indicative of potential secrets, within the source code and commit history. Its comprehensive scanning capabilities make it a valuable asset in uncovering sensitive information that might compromise security.
 2. [Git-secrets](https://github.com/awslabs/git-secrets):
 Git-secrets is a handy tool that helps prevent committing sensitive information, such as passwords or API keys, into a Git repository. By integrating with pre-commit hooks, Git-secrets acts as a proactive measure to identify and block the inclusion of secrets during the development process.
+
 
 3. **Check Libraries and Frameworks**
 Malicious libraries or frameworks  performing normal but can introduce security vulnerabilities. It is important to find them before the building process. Conducting thorough checks ensures that potentially harmful elements are identified and addressed promptly.
 
 ## Part II: Security in CD
 As we prepare to deploy our code, ensuring its safety in production becomes paramount. Several principles guide us in this :
-![CD](/images/DevSecOps/3.jpg)
+![CD](/images/DevSecOps/3.jpeg)
 1. **Proper Secret Management**
-Effective secret management is foundational to a secure deployment pipeline. Docker variables should be treated as secrets within the pipeline. Implementing robust access management and authorization practices adds an extra layer of security.
-
-Secrets should be securely stored in designated vaults. [HashiCorp Vault](https://github.com/hashicorp/vault) for example is  reliable choice among open-source vault solutions. In Kubernetes environments, it is advisable to use Secrets instead of relying on environment variables or configmaps for enhanced security.
-
-Regularly changing secrets, preferably every few months, aligns with the principle of Zero Trust. This practice ensures that former employees, upon leaving the company, no longer retain access to critical secrets, mitigating potential security risks.
+Effective secret management is foundational to a secure deployment pipeline. Docker variables should be treated as secrets within the pipeline. Implementing robust access management and authorization practices adds an extra layer of security. <br>Secrets should be securely stored in designated vaults. [HashiCorp Vault](https://github.com/hashicorp/vault) for example is  reliable choice among open-source vault solutions. In Kubernetes environments, it is advisable to use Secrets instead of relying on environment variables or configmaps for enhanced security. <br>Regularly changing secrets, preferably every few months, aligns with the principle of Zero Trust. This practice ensures that former employees, upon leaving the company, no longer retain access to critical secrets, mitigating potential security risks.
 
 2. **Encrypting Containers**
 Encrypting containers serves as a robust measure to prevent unauthorized access to their contents. By securing the application supply chain through container encryption, we fortify the confidentiality of the information within the container. This proactive approach ensures that only authorized entities can decipher and access the sensitive data enclosed within the container.
 
-# Part III: Security in Infrastructure
+## Part III: Security in Infrastructure
 Integral to software architecture, the regular audit of our infrastructure is a responsibility for a DevSecOps engineer, facilitated through automated scripts and tools. Several critical could be considerated:
-![Infrastructure](/images/DevSecOps/4.jpg)
+![Infrastructure](/images/DevSecOps/4.jpeg)
 
 1. **Checking Container Registry**
 Evaluating the security of our container registry is paramount. Questions such as the registry's overall security, correct access management, and the individuals authorized to pull and push images should be addressed. Tailoring access controls based on specific needs enhances the overall security posture.
